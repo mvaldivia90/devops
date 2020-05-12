@@ -84,7 +84,7 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 0. Administracion de datos para nubes hybridas
    - Acceder al sitio https://mayadata.io/
    - Crear cuenta con Google
-   - Enlasar su cluster local  con director online.
+   - Enlazar su cluster local  con director online a traves de kubectl.
 
 
 ## Eliminacion de maquinas virtuales
