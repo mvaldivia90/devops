@@ -19,12 +19,12 @@ Debes instalar estos cliente para que todo sea exitoso
 - Sistema operativo windows o Linux
 - 4 Threads o mas
 - 8GB RAM
-- 200GB espacio en disco.
+- 100GB espacio en disco.
 
 
 ## Deploy
 
-0. Ejecuta `git clone https://github.com/mvaldivia90/rancher.git` 
+0. Ejecuta `git clone https://github.com/mvaldivia90/devops.git` 
 0. Ejecuta en tu terminal `vagrant plugin install vagrant-disksize` (esto sirve para modificar el tamaño de los box)
 0. Ejecuta `vagrant up`
 	-Si ejecutas de Windows y tienes problemas en el despliege indicando bad interpreter debes instalar lo siguiente:
@@ -46,29 +46,50 @@ Se han realizado modificaciones a los OS con el proposito de que la prueba de co
 
 La contraseña por defecto es admin, pero esta puede ser actualizada en el archivo config.yaml, en este archivo se encuentra definido la cantidad de nodos y uso de recursos de nuestro cluster kubernetes.
 
-0. Crear un proyecto 
-0. Deploy apps NFS-provisioner y asignar el filesystem /storagenfs como host path
-   Si el NFS queda en estado Pending de forma permanente se debe validar lo siguiente tanto en el server como los nodos desplegados:
-   - Servicios de Red activos en rancherOS 
-        sudo ros service enable kernel-extras
-	sudo ros service enable kernel-headers
-	sudo ros service enable kernel-headers-system-docker
-	sudo ros service enable volume-nfs
-	sudo ros service enable volume-cifs
-   - Verificar si la particion /dev/sda2 esta montada en /storagenfs
-   - Verificar Owner y permisos (rancher:rancher 775)
-   - si no te permite montar el FS debes eliminar la particion 2 y ejeuctar en tu terminar fuera del server-01 vagrant reload.
+Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado quiskstart este Active.
 
-0. Prueba de volumenes PVC 
-   - Seleccionar el proyecto creado 
-   - Seleccionar Workloads
-   - Seleccionar Volumenes
-   - Seleccionar Add Volume
-   - Asignar nombre de volumen PVC
-   - Seleccionar new persistent volume
-   - Asignar el storage class creado 
-   - Dar una capacidad de prueba en esta caso 1 GB
-   - Para que el disco este en estado correcto debe mostrarse como BOUND
+
+
+## Aprendamos rancher
+
+0. Administracion de cluster kubernetes
+
+0. Catalogos de aplicaciones en Helm
+
+0. Modificar cluster via yaml 
+-  Agrega las siguietnes lineas al servicio kubelet
+   extra_binds:
+     - /var/openebs/local:/var/openebs/local
+ 
+0. Espera que se actualize el cluster 
+
+0. provisionar app storage en rancher 
+- Debes selecionar el namespace system para instalar esta app base en nuestro cluster
+- Elegiremos  la apps openEBS de nuestro catalogo 
+- Ejecutaremos el boton `Launch` y esperemos a que todos los POD y servicio esten OK
+- Configurar default storage class como hostpath
+
+0.  Activaremos live metric monitoring  en nuestro cluster  
+- Activaremos la persistencia de data solo con grafana 
+- Asignar 5GB al default storage class
+- Esperar a que el despligue termine.
+- Identificar el Endpoint y Acceder a grafana cluster
+
+
+0. Crear proyecto proyecto `Altiuz-dev`
+
+0. Seleccionar el proyecto Altiuz-dev 
+
+0. Desplegar Wordpress con PVC 
+   -  Asignar 8GB a wordpress
+   -  Asignar 5GB a mariadb
+   -  Labalancing layer 7 `False`
+   -  Service type Nodeport
+
+0. Identificacion de servicio
+   - Identificar los workload de wordpress
+   - Identicar Volumenes creados estos deben estar en estado bound
+   - Acceder al endpoint generado.
 
 
 
