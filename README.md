@@ -32,16 +32,6 @@ Debes instalar estos cliente para que todo sea exitoso
 0. Espera a que los ambientes esten prepadors aprox 5 a 10 min.
 0. Ejecuta un vagrant status para saber el estado de las VM, Resultado esperado Running.
 
-
-## Acceso y actividades
- 
-
-Se han realizado modificaciones a los OS con el proposito de que la prueba de concepto sea totalmente funcional
-- se extendio el disco del box rancherOS a 50GB
-- Se crea particion de 26GB tipo linux
-- Se  crea FS /storagenfs 
-- Se habilitan servicio de red en rancherOS ( puede ser revisado ejecutando sudo ros service list)
-
 0. Cuando provisionamiento termine debes entrar a la siguiente URL  [](http://172.22.101.101).
 
 La contraseña por defecto es admin, pero esta puede ser actualizada en el archivo config.yaml, en este archivo se encuentra definido la cantidad de nodos y uso de recursos de nuestro cluster kubernetes.
@@ -50,7 +40,7 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 
 
-## Aprendamos rancher
+##  CaaS RancherOS + k3s + OpenEBS + Grafana + prometheus + wordpress + maya
 
 0. Administracion de cluster kubernetes
 
@@ -91,7 +81,10 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
    - Identicar Volumenes creados estos deben estar en estado bound
    - Acceder al endpoint generado.
 
-
+0. Administracion de datos para nubes hybridas
+   - Acceder al sitio https://mayadata.io/
+   - Crear cuenta con Google
+   - Enlasar su cluster local  con director online.
 
 
 ## Eliminacion de maquinas virtuales
