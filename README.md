@@ -32,7 +32,7 @@ Debes instalar estos cliente para que todo sea exitoso
 0. Espera a que los ambientes esten prepadors aprox 5 a 10 min.
 0. Ejecuta un vagrant status para saber el estado de las VM, Resultado esperado Running.
 
-0. Cuando provisionamiento termine debes entrar a la siguiente URL  [](http://172.22.101.101).
+0. Cuando provisionamiento termine debes entrar a la siguiente URL  [Rancher UI](http://172.22.101.101).
 
 La contraseña por defecto es admin, pero esta puede ser actualizada en el archivo config.yaml, en este archivo se encuentra definido la cantidad de nodos y uso de recursos de nuestro cluster kubernetes.
 
@@ -48,9 +48,9 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 0. Modificar cluster via yaml 
 -  Agrega las siguietnes lineas al servicio kubelet
-   extra_binds:
-     - /var/openebs/local:/var/openebs/local
- 
+   `   extra_binds:
+        - '/var/openebs/local:/var/openebs/local' `
+
 0. Espera que se actualize el cluster 
 
 0. provisionar app storage en rancher 
