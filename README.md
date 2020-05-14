@@ -1,14 +1,13 @@
 ## DevOps Avanzado 
 ## CaaS Despliegue y a automatizacion en 30min.
  
-Aqui encontraras un Servidor de Rancher con un cluster ya creado de Kubernetes k3s, ademas de activiades para utilizar correctamente la plataforma.
+Aqui encontraras un Servidor de Rancher con un cluster ya creado de Kubernetes k3s, ademas de actividades para utilizar correctamente la plataforma.
 
 ## Requirementos
 
-Debes instalar estos cliente para que todo sea exitoso
 
 
-- [Git](https://gitforwindows.org/) 
+- [Git](https://gitforwindows.org/)  Solo Windows para linux utiliza tu cliente de descarga habitual.
 - [VirtualBox](https://www.virtualbox.org)
 - [Ansible](https://www.ansible.com/) Solo Linux 
 - [Vagrant](https://www.vagrantup.com)
