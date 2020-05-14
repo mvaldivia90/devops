@@ -1,10 +1,11 @@
 ## DevOps Avanzado 
-## CaaS Despliegue y a automatizacion en 30min.
+## CaaS Despliegue y a automatizacion.
  
 Aqui encontraras un Servidor de Rancher con un cluster ya creado de Kubernetes k3s, ademas de actividades para utilizar correctamente la plataforma.
 
 ## Requirementos
-
+ 
+ Software necesario:
 
 
 - [Git](https://gitforwindows.org/)  Solo Windows para linux utiliza tu cliente de descarga habitual.
@@ -25,23 +26,23 @@ Puedes cambiar el tamaño y cantidad de nodos editando el archivo config.yaml
 
 ## Deploy
 
-0. Ejecuta `git clone https://github.com/mvaldivia90/devops.git` 
-0. Ejecuta en tu terminal `vagrant plugin install vagrant-disksize` (esto sirve para modificar el tamaño de los box)
+0. Ejecuta en tu cliente git  `git clone https://github.com/mvaldivia90/devops.git` 
+0. Ejecuta   `vagrant plugin install vagrant-disksize` (esto sirve para modificar el tamaño de los box)
 0. Ejecuta `vagrant up`
 	-Si ejecutas de Windows y tienes problemas en el despliege indicando bad interpreter debes instalar lo siguiente:
 	- [dos2unix](https://sourceforge.net/projects/dos2unix/)
-0. Espera a que los ambientes esten prepadors aprox 5 a 10 min.
+0. Espera a que los ambientes esten preparados aprox 5 a 10 min.
 0. Ejecuta un vagrant status para saber el estado de las VM, Resultado esperado Running.
 
 0. Cuando provisionamiento termine debes entrar a la siguiente URL  [Rancher UI](http://172.22.101.101).
 
-La contraseña por defecto es admin, pero esta puede ser actualizada en el archivo config.yaml, en este archivo se encuentra definido la cantidad de nodos y uso de recursos de nuestro cluster kubernetes.
+La contraseña por defecto es admin, pero esta puede ser actualizada en el archivo config.yaml
 
 Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado quiskstart este Active.
 
 
 
-##  CaaS RancherOS + k3s + OpenEBS + Grafana + prometheus + wordpress + maya
+##  CaaS RancherOS + k3s + OpenEBS + Grafana + prometheus + wordpress + mayadata
 
 0. Administracion de cluster kubernetes
 
@@ -66,7 +67,8 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 - Activaremos la persistencia de data solo con grafana 
 - Asignar 5GB al default storage class
 - Esperar a que el despligue termine.
-- Identificar el Endpoint y Acceder a grafana cluster
+- Identificar el Endpoint en el namespace y Acceder a grafana cluster
+- Revisa los cambios en el dashboard de cluster
 
 
 0. Crear proyecto proyecto `Altiuz-dev`
@@ -84,12 +86,14 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
    - Identicar Volumenes creados estos deben estar en estado bound
    - Acceder al endpoint generado.
 
-0. Administracion de datos para nubes hybridas
+0. Administracion de datos para nubes hybridas openEBS
    - Acceder al sitio https://mayadata.io/
    - Crear cuenta con Google
    - Enlazar su cluster local  con director online a traves de kubectl.
 
 
-## Eliminacion de maquinas virtuales
-
+## comandos vagrant
+Para suspender todas o una VM `vagrant suspend` `vagrant suspend "nombrevm"`
 Para eliminar todas las VM dejes ejecutar. `vagrant destroy -f`
+Para recargar todas o una VM  `vagrant reload` `vagrant reload "nombrevm"
+
