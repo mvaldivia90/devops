@@ -49,9 +49,9 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 0. Modificar cluster via yaml 
 -  Agrega las siguietnes lineas al servicio kubelet
-   `   extra_binds:`
-   
-       ` - '/var/openebs/local:/var/openebs/local' `
+`extra_binds:`
+
+` - '/var/openebs/local:/var/openebs/local'`
 
 0. Espera que se actualize el cluster 
 
