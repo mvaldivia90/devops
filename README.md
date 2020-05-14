@@ -1,7 +1,7 @@
 ## DevOps Avanzado 
 ## CaaS Despliegue y a automatizacion en 30min.
  
-Aqui encontraras un Servidor de Rancher con un cluster ya creado de k3s
+Aqui encontraras un Servidor de Rancher con un cluster ya creado de Kubernetes k3s, ademas de activiades para utilizar correctamente la plataforma.
 
 ## Requirementos
 
@@ -20,6 +20,8 @@ Debes instalar estos cliente para que todo sea exitoso
 - 4 Threads o mas
 - 8GB RAM
 - 100GB espacio en disco.
+
+Puedes cambiar el tamaño y cantidad de nodos editando el archivo config.yaml
 
 
 ## Deploy
@@ -48,8 +50,8 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 0. Modificar cluster via yaml 
 -  Agrega las siguietnes lineas al servicio kubelet
-   `   extra_binds:
-        - '/var/openebs/local:/var/openebs/local' `
+   `   extra_binds:`
+       ` - '/var/openebs/local:/var/openebs/local' `
 
 0. Espera que se actualize el cluster 
 
