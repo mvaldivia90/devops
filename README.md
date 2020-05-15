@@ -75,12 +75,31 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 0. Seleccionar el proyecto Altiuz-dev 
 
+Nota: Para activar el load balanced Layer 7 que se generan de forma automatica en rancher debes seguir las siguientes instrucciones:
+   - Clona el siguiente GIT [PoweDNS](https://github.com/basecamp/xip-pdns) 
+   - Modifica los valores por defecto en el archivo xip-pdns.conf 
+     - XIP_DOMAIN="xip.io"
+     - XIP_ROOT_ADDRESSES=( "172.22.101.111" )  IP del nodo
+     - XIP_NS_ADDRESSES=( "rancher" "wordpress" )  Pueden ser distintos.
+   - Activar el servicio de PowerDNS ( debe ser ejecutado en la maquina host)
+     ` /path/to/xip-pdns/bin/xip-pdns /path/to/xip-pdns/etc/xip-pdns.conf`
+     Desbes cambiar "/path/to/" por el path donde realizaste el clon del GIT.
+     
 0. Desplegar Wordpress con PVC 
    -  Asignar 8GB a wordpress
    -  Asignar 5GB a mariadb
+   
+   Sin Servicio de Balanceo
    -  Labalancing layer 7 `False`
    -  Service type Nodeport
-
+   -  Pincha el boton `Launch`
+   
+   Con servicio de balanceo Layer 7 xip.io
+   -  Expose app using Layer 7 Load Balancer `True`
+   -  Hostname `Automatically generate a .xip.io hostname`
+   -  Pincha el boton `Launch`
+  
+     
 0. Identificacion de servicio
    - Identificar los workload de wordpress
    - Identicar Volumenes creados estos deben estar en estado bound
