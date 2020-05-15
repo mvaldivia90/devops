@@ -75,7 +75,8 @@ Una vez que accedas a la URL de Rancher debes esperar a que el cluster llamado q
 
 0. Seleccionar el proyecto Altiuz-dev 
 
-Nota: Para activar el load balanced Layer 7 que se generan de forma automatica en rancher debes seguir las siguientes instrucciones:
+Nota: Para activar el load balanced Layer 7 que se generan de forma automatica en rancher debes seguir las siguientes    instrucciones:
+
    - Clona el siguiente GIT [PoweDNS](https://github.com/basecamp/xip-pdns) 
    - Modifica los valores por defecto en el archivo xip-pdns.conf 
      - XIP_DOMAIN="xip.io"
