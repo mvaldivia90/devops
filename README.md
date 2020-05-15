@@ -83,7 +83,9 @@ Nota: Para activar el load balanced Layer 7 que se generan de forma automatica e
      - XIP_ROOT_ADDRESSES=( "172.22.101.111" )  IP del nodo
      - XIP_NS_ADDRESSES=( "rancher" "wordpress" )  Pueden ser distintos.
    - Activar el servicio de PowerDNS ( debe ser ejecutado en la maquina host)
+   
      ` /path/to/xip-pdns/bin/xip-pdns /path/to/xip-pdns/etc/xip-pdns.conf`
+     
      Desbes cambiar "/path/to/" por el path donde realizaste el clon del GIT.
      
 0. Desplegar Wordpress con PVC 
