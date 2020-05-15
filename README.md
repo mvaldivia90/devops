@@ -86,7 +86,8 @@ Nota: Para activar el load balanced Layer 7 que se generan de forma automatica e
    
      ` /path/to/xip-pdns/bin/xip-pdns /path/to/xip-pdns/etc/xip-pdns.conf`
      
-     Desbes cambiar "/path/to/" por el path donde realizaste el clon del GIT.
+     Debes cambiar "/path/to/" por el path donde realizaste el clon del GIT.
+     Espera algunos minutos para que el servidor DSN este activo.
      
 0. Desplegar Wordpress con PVC 
    -  Asignar 8GB a wordpress
