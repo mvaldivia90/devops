@@ -7,11 +7,11 @@ jqimage="stedolan/jq"
 agent_ip=`ip addr show eth1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
 # enable netowork services for NFS and other
 
-sudo ros s enable kernel-extras
-sudo ros s enable kernel-headers
-sudo ros s enable kernel-headers-system-docker
-sudo ros s enable volume-nfs
-sudo ros s enable volume-cifs
+#sudo ros s enable kernel-extras
+#sudo ros s enable kernel-headers
+#sudo ros s enable kernel-headers-system-docker
+#sudo ros s enable volume-nfs
+#sudo ros s enable volume-cifs
 #sudo ros s up volume-nfs para habilitar mountpath desde rancherOS editar /var/lib/rancher/conf/cloud-config.d/nfs-data.yml
 
 # pre-requisitos OpenEBS
