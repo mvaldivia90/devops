@@ -15,9 +15,9 @@ agent_ip=`ip addr show eth1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
 #sudo ros s up volume-nfs para habilitar mountpath desde rancherOS editar /var/lib/rancher/conf/cloud-config.d/nfs-data.yml
 
 # pre-requisitos OpenEBS
-sudo ros config set rancher.services.user-volumes.volumes  [/home:/home,/opt:/opt,/var/lib/kubelet:/var/lib/kubelet,/etc/kubernetes:/etc/kubernetes,/var/openebs]
-sudo ros s enable open-iscsi
-sudo ros s up open-iscsi
+#sudo ros config set rancher.services.user-volumes.volumes  [/home:/home,/opt:/opt,/var/lib/kubelet:/var/lib/kubelet,/etc/kubernetes:/etc/kubernetes,/var/openebs]
+#sudo ros s enable open-iscsi
+#sudo ros s up open-iscsi
 
 # Extiende particion sda a 50GB
 printf "d\nn\np\n1\n\n\nw" | sudo fdisk /dev/sda
